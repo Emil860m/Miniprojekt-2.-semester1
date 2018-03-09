@@ -56,4 +56,4 @@ public class VentelisteBørn {
         }
 
     }
-}
+

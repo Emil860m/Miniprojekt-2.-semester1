@@ -1,3 +1,5 @@
+package com.example.demo;
+
 public class VentelisteBørn {
     private String Navn;
     private String Efternavn;
@@ -11,9 +13,9 @@ public class VentelisteBørn {
         Adresse = adresse;
         Telefonnummer = telefonnummer;
         Kontaktperson = kontaktperson;
+    }
 
-
-        public String getNavn() {
+        public String getNavn(){
             return Navn;
         }
 

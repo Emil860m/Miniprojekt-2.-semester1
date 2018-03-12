@@ -18,7 +18,7 @@ public class HomeController {
         model.addAttribute("vBoern", vBoern);
         model.addAttribute("boern", boern);
         model.addAttribute("ansat", ansat);
-        return "Menu";
+        return "index";
     }
 
 

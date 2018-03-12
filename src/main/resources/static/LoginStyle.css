@@ -41,7 +41,7 @@
     cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-    background: #43A047;
+    background: #3498db;
 }
 .form .message {
     margin: 15px 0 0;
@@ -89,12 +89,22 @@
     color: #EF3B3A;
 }
 body {
-    background: #1a1cb8; /* fallback for old browsers */
-    background: -webkit-linear-gradient(right, #1a1cb8, #1a1cb8);
-    background: -moz-linear-gradient(right, #1a1cb8, #1a1cb8);
-    background: -o-linear-gradient(right, #1a1cb8, #1a1cb8);
-    background: linear-gradient(to left, #1a1cb8, #1a1cb8);
+    background: #ffffff; /* fallback for old browsers */
+    background: -webkit-linear-gradient(right, #ffffff, #ffffff);
+    background: -moz-linear-gradient(right, #ffffff, #ffffff);
+    background: -o-linear-gradient(right, #ffffff, #ffffff);
+    background: linear-gradient(to left, #ffffff, #ffffff);
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+header {
+    width: 100%;
+    height: 300px;
+    background-color: #3498db;
+    text-align: center;
+    position: relative;
+    position: fixed;
+    top: 0px;
+    left: 0px;
 }

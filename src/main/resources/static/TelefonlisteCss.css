@@ -1,0 +1,72 @@
+body {margin:0;}
+table {
+    text-align: left;
+    border: 1px solid #8b8777;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    width:100%;
+    table-layout: fixed;
+
+}
+
+tr {
+    background: #f2f0ee;
+    border: none;
+}
+
+tr:nth-of-type(odd) {
+    background: #efe6df;
+}
+/* table head row */
+tr:nth-of-type(1) {
+    background: #db7b07;
+    font-weight: 100;
+    color: #ebe7d7;
+    letter-spacing:.09em;
+    font-size:85%;
+    text-transform:uppercase;
+}
+
+td {
+    padding: 6px 0;margin:0;
+    border-bottom: 1px solid #dbd7c7;
+}
+th {
+    padding: 6px 0;margin:0;
+    border-bottom: 1px solid #dbd7c7;
+}
+
+td span {
+    color: brown;
+}
+
+@media screen and (max-width:768px) {
+    td {
+        padding: 4px;
+    }
+    td span {
+        display: block;
+        /*     background:tan; /*  Remove this. This just shows how this element becomse a block so it drops below other content on smaller screens */
+    }
+    td:nth-of-type(1) {
+        display:none;
+    }
+}
+header {
+    width: 100%;
+    height: 150px;
+    background-color: #3498db;
+    text-align: center;
+    position: relative;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+#venteliste th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    background-color: #ee8a00;
+    color: white;
+}
+#venteliste tr:hover {background-color: #ddd;}

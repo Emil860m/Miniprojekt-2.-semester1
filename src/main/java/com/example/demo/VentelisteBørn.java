@@ -7,14 +7,16 @@ public class VentelisteBørn {
     private String Kontaktperson;
     private String Kontaktperson2;
     private int id;
+    private boolean status;
 
-    public VentelisteBørn(String navn, String adresse, int telefonnummer, String kontaktperson, String kontaktperson2) {
+    public VentelisteBørn(String navn, String adresse, int telefonnummer, String kontaktperson, String kontaktperson2, int id, boolean status) {
         Navn = navn;
         Adresse = adresse;
         Telefonnummer = telefonnummer;
         Kontaktperson = kontaktperson;
         Kontaktperson2 = kontaktperson2;
-
+        this.id = id;
+        this.status = status;
     }
 
     public String getNavn(){

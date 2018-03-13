@@ -3,6 +3,9 @@ package com.example.demo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 
@@ -18,8 +21,37 @@ public class HomeController {
         model.addAttribute("vBoern", vBoern);
         model.addAttribute("boern", boern);
         model.addAttribute("ansat", ansat);
-        return "Telefonliste";
+        vBoern.add(new VentelisteBørn("Michael Jensen", "Hovedvej 197", 20828824, , ))
+        return "rediger";
+    }
+    @GetMapping("/rediger")
+    public String edit(@RequestParam(value = "id", defaultValue = "1") int id, Model model) {
+        int selectedStudentID = 0;
+        for (int i = 0; i < vBoern.size(); i++) {
+            if (vBoern.get(i).getId() == id) {
+                selectedStudentID = i;
+            }
+        }
+
+        model.addAttribute("boern", vBoern.get(selectedStudentID));
+        return "rediger";
     }
 
+    @PostMapping("/rediger")
+    public String rediger(@ModelAttribute VentelisteBørn boern) {
+        for (int i = 0; i < vBoern.size(); i++) {
+            if (boern.getId() == vBoern.get(i).getId()) {
+                // DEBUG -- Print the id of student to delete System.out.println(students.get(i).getStudentID());
+                vBoern.set(i,boern);
+                break;
+            } else {
+                //DEBUG -- Print while not finding the correct ID System.out.println("Could not find it::");
+            }
+        }
+       /* int index = student.getStudentID();
+        student.setStudentID(index);
+        students.set(index - 1, student);*/
+        return "redirect:/";
+    }
 
 }

@@ -2,21 +2,19 @@ package com.example.demo;
 
 public class VentelisteBørn {
     private String Navn;
-    private String Efternavn;
     private String Adresse;
     private int Telefonnummer;
     private String Kontaktperson;
     private String Kontaktperson2;
     private int id;
 
-    public VentelisteBørn(String navn, String efternavn, String adresse, int telefonnummer, String kontaktperson, String kontaktperson2, int id) {
+    public VentelisteBørn(String navn, String adresse, int telefonnummer, String kontaktperson, String kontaktperson2) {
         Navn = navn;
-        Efternavn = efternavn;
         Adresse = adresse;
         Telefonnummer = telefonnummer;
         Kontaktperson = kontaktperson;
         Kontaktperson2 = kontaktperson2;
-        this.id = id;
+
     }
 
     public String getNavn(){
@@ -27,13 +25,6 @@ public class VentelisteBørn {
         Navn = navn;
         }
 
-        public String getEfternavn() {
-            return Efternavn;
-        }
-
-        public void setEfternavn(String efternavn) {
-        Efternavn = efternavn;
-        }
 
         public String getAdresse() {
             return Adresse;

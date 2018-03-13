@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Venteliste</title>
     <link rel="stylesheet" type="text/css" href="ListeCss.css"/>
@@ -7,6 +7,7 @@
 <body>
 <header>
     <h1>Roskilde frie børnehave</h1>
+    <h2>Venteliste</h2>
     </br>
     </br>
     </br>
@@ -20,37 +21,13 @@
             <th width="5%">Kontaktperson 1</th>
             <th width="5%">Kontaktperson 2</th>
         </tr>
-        <tr>
+        <tr th:each="vBoern: ${vBoern}">
             <td></td>
-            <td>Lasse</td>
-            <td>20828824</td>
-            <td>Bagsværd Hovedgade</td>
-            <td>Mik jens</td>
-            <td>Michael Jensen</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Lasse</td>
-            <td>20828824</td>
-            <td>Bagsværd Hovedgade</td>
-            <td>Mik jens</td>
-            <td>Michael Jensen</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Lasse</td>
-            <td>20828824</td>
-            <td>Bagsværd Hovedgade</td>
-            <td>Mik jens</td>
-            <td>Michael Jensen</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Lasse</td>
-            <td>20828824</td>
-            <td>Bagsværd Hovedgade</td>
-            <td>Mik jens</td>
-            <td>Michael Jensen</td>
+            <td th:text="${vBoern.Navn}"/>
+            <td th:text="${vBoern.Telefonnummer}"/>
+            <td th:text="${vBoern.Adresse}"/>
+            <td th:text="${vBoern.Kontaktperson}"/>
+            <td th:text="${vBoern.Kontaktperson2}"/>
         </tr>
 
     </table>

@@ -7,6 +7,7 @@
 <body>
 <header>
     <h1>Roskilde frie børnehave</h1>
+    <h2>Telefonliste</h2>
     </br>
     </br>
     </br>
@@ -22,11 +23,11 @@
         </tr>
         <tr th:each="boern: ${boern}">
             <td></td>
-            <td th:text="${boern.Navn + boern.Efternavn}"/>
+            <td th:text="${boern.Navn}"/>
             <td th:text="${boern.Telefonnummer}"/>
             <td th:text="${boern.Adresse}"/>
             <td th:text="${boern.Kontaktperson}"/>
-            <td th:text="${boern.Kontaktperson2}"
+            <td th:text="${boern.Kontaktperson2}"/>
         </tr>
 
 

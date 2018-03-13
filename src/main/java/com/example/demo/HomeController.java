@@ -21,8 +21,8 @@ public class HomeController {
         model.addAttribute("vBoern", vBoern);
         model.addAttribute("boern", boern);
         model.addAttribute("ansat", ansat);
-        vBoern.add(new VentelisteBørn("Michael Jensen", "Hovedvej 197", 20828824, , ))
-        return "rediger";
+        vBoern.add(new VentelisteBørn("Emil Fenger", "Lygten 37", 12345678, "Micheal Jensen", "Lasse Kjær", 1, true));
+        return "venteliste";
     }
     @GetMapping("/rediger")
     public String edit(@RequestParam(value = "id", defaultValue = "1") int id, Model model) {
@@ -52,6 +52,20 @@ public class HomeController {
         student.setStudentID(index);
         students.set(index - 1, student);*/
         return "redirect:/";
+    }
+
+    @GetMapping("/create")
+    public   String   create(Model   model)   {
+        model.addAttribute("vBoern",   new   VentelisteBørn());
+        return   "create";
+    }
+
+    @PostMapping("/create")
+    public String create(@ModelAttribute VentelisteBørn barn)   {
+        int  id   =   vBoern.size() + 1;
+        barn.setId(id);
+        vBoern.add(barn);
+        return   "redirect:/";
     }
 
 }

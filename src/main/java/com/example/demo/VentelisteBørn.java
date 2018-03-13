@@ -9,6 +9,10 @@ public class VentelisteBørn {
     private int id;
     private boolean status;
 
+    public VentelisteBørn() {
+
+    }
+
     public VentelisteBørn(String navn, String adresse, int telefonnummer, String kontaktperson, String kontaktperson2, int id, boolean status) {
         Navn = navn;
         Adresse = adresse;

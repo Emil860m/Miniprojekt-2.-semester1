@@ -19,11 +19,12 @@ public class HomeController {
     public String index(Model model){
 
         model.addAttribute("vBoern", vBoern);
-        model.addAttribute("boern", boern);
-        model.addAttribute("ansat", ansat);
+        //model.addAttribute("boern", boern);
+        //model.addAttribute("ansat", ansat);
         vBoern.add(new VentelisteBørn("Emil Fenger", "Lygten 37", 12345678, "Micheal Jensen", "Lasse Kjær", 1, true));
         return "venteliste";
     }
+    /*
     @GetMapping("/rediger")
     public String edit(@RequestParam(value = "id", defaultValue = "1") int id, Model model) {
         int selectedStudentID = 0;
@@ -50,14 +51,14 @@ public class HomeController {
         }
        /* int index = student.getStudentID();
         student.setStudentID(index);
-        students.set(index - 1, student);*/
+        students.set(index - 1, student);
         return "redirect:/";
-    }
+    }*/
 
     @GetMapping("/create")
-    public   String   create(Model   model)   {
-        model.addAttribute("vBoern",   new   VentelisteBørn());
-        return   "create";
+    public String create(Model model) {
+        model.addAttribute("VentelisteBørn", new VentelisteBørn());
+        return "create";
     }
 
     @PostMapping("/create")

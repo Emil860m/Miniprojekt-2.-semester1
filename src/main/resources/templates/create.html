@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 
     <title>Title</title>
 </head>
 <body>
 <h1>Opret barn</h1>
-<!--
+
 <form method="Post" th:action="@{/create}">
-    <label>Fulde navn:</label>
-    <input   type="text"    th:field="${vBoern.Navn}"  required="true" />
+    <label>Navn:</label>
+    <input type="text" th:field="${VentelisteBørn.navn}" required="true" />
+    <label>Telefon:</label>
+    <input type="text" th:field="${VentelisteBørn.telefonnummer}" required="true" />
     <label>Adresse:</label>
-    <input   type="text"   th:field="${vBoern.Adresse}" required="true"/>
-    <label>Telefonnummer:</label>
-    <input   type="int"   th:field="${vBoern.Telefonnummer}" required="true"/>
-    <label>Kontaktperson 1:</label>
-    <input   type="text"  th:field="${vBoern.Kontaktperson" required="true"/>
+    <input type="text" th:field="${VentelisteBørn.adresse}" required="true" />
+    <label>Kontaktperson:</label>
+    <input type="text" th:field="${VentelisteBørn.kontaktperson}" required="true" />
     <label>Kontaktperson 2:</label>
-    <input   type="text"  th:field="${vBoern.Kontaktperson2}" required="true"/>
-    <input   type="submit"   value="Send"   />
+    <input type="text" th:field="${VentelisteBørn.kontaktperson2}" required="true" />
+    <input type="submit" value="Send" />
 </form>
 
--->
 </body>
 </html>

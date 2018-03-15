@@ -16,8 +16,8 @@ import java.util.Scanner;
 @Controller
 public class HomeController {
     private static ArrayList<VentelisteBørn> vBoern = new ArrayList();
-    //  private ArrayList<Boern> boern = new ArrayList();
-    //   private ArrayList<Ansat> ansat = new ArrayList();
+    private static ArrayList<VentelisteBørn> mBoern = new ArrayList();
+    private static ArrayList<VentelisteBørn> veBoern = new ArrayList();
     int barnID = 0;
 
     @GetMapping("/")
@@ -30,15 +30,21 @@ public class HomeController {
         return "Menu";
     }
 
+    @GetMapping("/Menu")
+    public String Menu(Model model) {
+        //model.addAttribute("vBoern", vBoern);
+        return "Menu";
+    }
+
     @GetMapping("/venteliste")
     public String venteliste(Model model) {
-        model.addAttribute("vBoern", vBoern);
+        model.addAttribute("veBoern", veBoern);
         return "venteliste";
     }
 
     @GetMapping("/Telefonliste")
     public String Telefonliste(Model model) {
-        model.addAttribute("vBoern", vBoern);
+        model.addAttribute("mBoern", mBoern);
         return "Telefonliste";
     }
 
@@ -56,6 +62,7 @@ public class HomeController {
         boern.setId(barnID);
         vBoern.set(barnID - 1, boern);
         gemMedlem();
+
         return "redirect:/venteliste";
     }
 
@@ -72,6 +79,7 @@ public class HomeController {
         barn.setId(id);
         vBoern.add(barn);
         gemMedlem();
+        addToList();
         return "redirect:/venteliste";
     }
 
@@ -106,6 +114,23 @@ public class HomeController {
             sc.close();
         } catch (FileNotFoundException e) {
         }
-
+    loadLister();
+    }
+    public static void loadLister(){
+        for (VentelisteBørn boern : vBoern){
+            if(boern.isStatus()){
+                mBoern.add(boern);
+            }else{
+                veBoern.add(boern);
+            }
+            
+        }
+    }
+    public static void addToList(){
+        if(vBoern.get(vBoern.size()-1).isStatus()){
+            mBoern.add(vBoern.get(vBoern.size()-1));
+        }else{
+            veBoern.add(vBoern.get(vBoern.size()-1));
+        }
     }
 }

@@ -23,13 +23,13 @@
             <th width="5%">Kontaktperson 1</th>
             <th width="5%">Kontaktperson 2</th>
         </tr>
-        <tr th:each="boern: ${boern}">
+        <tr th:each="mBoern: ${mBoern}">
             <td></td>
-            <td th:text="${boern.Navn}"/>
-            <td th:text="${boern.Telefonnummer}"/>
-            <td th:text="${boern.Adresse}"/>
-            <td th:text="${boern.Kontaktperson}"/>
-            <td th:text="${boern.Kontaktperson2}"/>
+            <td th:text="${mBoern.Navn}"/>
+            <td th:text="${mBoern.Telefonnummer}"/>
+            <td th:text="${mBoern.Adresse}"/>
+            <td th:text="${mBoern.Kontaktperson}"/>
+            <td th:text="${mBoern.Kontaktperson2}"/>
         </tr>
 
 

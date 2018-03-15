@@ -29,14 +29,14 @@
             <th width="5%">Kontaktperson 2</th>
             <th width="2%"></th>
         </tr>
-        <tr th:each="vBoern: ${vBoern}">
+        <tr th:each="veBoern: ${veBoern}">
             <td></td>
-            <td th:text="${vBoern.Navn}"/>
-            <td th:text="${vBoern.Telefonnummer}"/>
-            <td th:text="${vBoern.Adresse}"/>
-            <td th:text="${vBoern.Kontaktperson}"/>
-            <td th:text="${vBoern.Kontaktperson2}"/>
-            <td><a th:href="@{'/edit?id='+${vBoern.id}}">
+            <td th:text="${veBoern.Navn}"/>
+            <td th:text="${veBoern.Telefonnummer}"/>
+            <td th:text="${veBoern.Adresse}"/>
+            <td th:text="${veBoern.Kontaktperson}"/>
+            <td th:text="${veBoern.Kontaktperson2}"/>
+            <td><a th:href="@{'/edit?id='+${veBoern.id}}">
                 <button class="btn-ed btn">edit</button>
             </a>
             </td>

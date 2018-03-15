@@ -8,34 +8,40 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 @Controller
 public class HomeController {
-    private ArrayList<VentelisteBørn> vBoern = new ArrayList();
-  //  private ArrayList<Boern> boern = new ArrayList();
- //   private ArrayList<Ansat> ansat = new ArrayList();
+    private static ArrayList<VentelisteBørn> vBoern = new ArrayList();
+    //  private ArrayList<Boern> boern = new ArrayList();
+    //   private ArrayList<Ansat> ansat = new ArrayList();
     int barnID = 0;
+
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model) {
         læsFraFil();
         //model.addAttribute("vBoern", vBoern);
         //model.addAttribute("boern", boern);
         //model.addAttribute("ansat", ansat);
         //vBoern.add(new VentelisteBørn("Emil Fenger", "Lygten 37", 12345678, "Micheal Jensen", "Lasse Kjær", 1, true));
-        return "venteliste";
+        return "Menu";
     }
+
     @GetMapping("/venteliste")
-    public String venteliste(Model model){
+    public String venteliste(Model model) {
         model.addAttribute("vBoern", vBoern);
         return "venteliste";
     }
+
     @GetMapping("/Telefonliste")
-    public String Telefonliste(Model model){
+    public String Telefonliste(Model model) {
         model.addAttribute("vBoern", vBoern);
         return "Telefonliste";
     }
+
     @GetMapping("/edit")
     public String edit(@RequestParam(value = "id", defaultValue = "1") int id, Model model) {
         if (model != null) {
@@ -44,10 +50,12 @@ public class HomeController {
         barnID = id;
         return "edit";
     }
+
     @PostMapping("/edit")
-    public String edit(@ModelAttribute VentelisteBørn boern) {
+    public String edit(@ModelAttribute VentelisteBørn boern) throws Exception {
         boern.setId(barnID);
-        vBoern.set(barnID - 1,boern);
+        vBoern.set(barnID - 1, boern);
+        gemMedlem();
         return "redirect:/venteliste";
     }
 
@@ -59,23 +67,25 @@ public class HomeController {
     }
 
     @PostMapping("/create")
-    public String create(@ModelAttribute VentelisteBørn barn)throws Exception{
-        int  id   =   vBoern.size() + 1;
+    public String create(@ModelAttribute VentelisteBørn barn) throws Exception {
+        int id = vBoern.size() + 1;
         barn.setId(id);
         vBoern.add(barn);
-        gemMedlem(vBoern);
-        return   "redirect:/venteliste";
+        gemMedlem();
+        return "redirect:/venteliste";
     }
-    public static void gemMedlem(ArrayList<VentelisteBørn> vBoern) throws Exception{
-        String s = "";
-        for(VentelisteBørn vb : vBoern){
 
-            s += vb.getId()+ "," + vb.getNavn() + "," + vb.getTelefonnummer() + "," + vb.getAdresse() + "," + vb.getKontaktperson() + "," + vb.getKontaktperson2() + "," + vb.isStatus() + "\r\n";
+    public static void gemMedlem() throws Exception {
+        String s = "";
+        for (VentelisteBørn vb : vBoern) {
+
+            s += vb.getId() + "," + vb.getNavn() + "," + vb.getTelefonnummer() + "," + vb.getAdresse() + "," + vb.getKontaktperson() + "," + vb.getKontaktperson2() + "," + vb.isStatus() + "\r\n";
         }
         PrintStream output = new PrintStream(new File("src/main/java/com/example/demo/Boern.txt"));
         output.print(s);
         output.close();
     }
+
     public static void læsFraFil() {
         try {
             Scanner sc = new Scanner(new File("src/main/java/com/example/demo/Boern.txt"));
@@ -97,4 +107,5 @@ public class HomeController {
         } catch (FileNotFoundException e) {
         }
 
+    }
 }

@@ -16,9 +16,7 @@ public class Ansat {
     }
 
 
-    public String getStilling() {
-        return stilling;
-    }
+    public String getStilling() { return stilling; }
 
     public void setStilling(String stilling) {
         this.stilling = stilling;

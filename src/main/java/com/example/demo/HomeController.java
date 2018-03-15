@@ -20,13 +20,22 @@ public class HomeController {
     @GetMapping("/")
     public String index(Model model){
 
-        model.addAttribute("vBoern", vBoern);
+        //model.addAttribute("vBoern", vBoern);
         //model.addAttribute("boern", boern);
         //model.addAttribute("ansat", ansat);
         //vBoern.add(new VentelisteBørn("Emil Fenger", "Lygten 37", 12345678, "Micheal Jensen", "Lasse Kjær", 1, true));
         return "venteliste";
     }
-
+    @GetMapping("/venteliste")
+    public String venteliste(Model model){
+        model.addAttribute("vBoern", vBoern);
+        return "venteliste";
+    }
+    @GetMapping("/Telefonliste")
+    public String Telefonliste(Model model){
+        model.addAttribute("vBoern", vBoern);
+        return "Telefonliste";
+    }
     @GetMapping("/edit")
     public String edit(@RequestParam(value = "id", defaultValue = "1") int id, Model model) {
         if (model != null) {
@@ -39,7 +48,7 @@ public class HomeController {
     public String edit(@ModelAttribute VentelisteBørn boern) {
         boern.setId(barnID);
         vBoern.set(barnID - 1,boern);
-        return "redirect:/";
+        return "redirect:/venteliste";
     }
 
 
@@ -55,7 +64,7 @@ public class HomeController {
         barn.setId(id);
         vBoern.add(barn);
         gemMedlem(vBoern);
-        return   "redirect:/";
+        return   "redirect:/venteliste";
     }
     public static void gemMedlem(ArrayList<VentelisteBørn> vBoern) throws Exception{
         String s = "";

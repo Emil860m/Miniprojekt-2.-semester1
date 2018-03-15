@@ -19,7 +19,7 @@ public class HomeController {
     int barnID = 0;
     @GetMapping("/")
     public String index(Model model){
-
+        læsFraFil();
         //model.addAttribute("vBoern", vBoern);
         //model.addAttribute("boern", boern);
         //model.addAttribute("ansat", ansat);
@@ -76,4 +76,25 @@ public class HomeController {
         output.print(s);
         output.close();
     }
+    public static void læsFraFil() {
+        try {
+            Scanner sc = new Scanner(new File("src/main/java/com/example/demo/Boern.txt"));
+
+            while (sc.hasNextLine()) {
+                String line = sc.nextLine();
+                Scanner readline = new Scanner(line).useDelimiter(",");
+                int id = readline.nextInt();
+                String navn = readline.next();
+                int telefonnummer = readline.nextInt();
+                String adresse = readline.next();
+                String kontaktperson = readline.next();
+                String kontaktperson2 = readline.next();
+                boolean status = readline.nextBoolean();
+                vBoern.add(new VentelisteBørn(navn, adresse, telefonnummer, kontaktperson, kontaktperson2, id, status));
+            }
+
+            sc.close();
+        } catch (FileNotFoundException e) {
+        }
+
 }

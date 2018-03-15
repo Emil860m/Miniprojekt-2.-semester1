@@ -12,6 +12,7 @@
     <a href="create">
         <button>create</button>
     </a>
+
     <!--<a class="btn" href="create">Link</a>-->
 
     </br>
@@ -23,9 +24,10 @@
             <th width="1%"></th>
             <th width="4%">Barnets navn</th>
             <th width="2%">Telefon</th>
-            <th width="5%">Addresse</th>
+            <th width="3%">Addresse</th>
             <th width="5%">Kontaktperson 1</th>
             <th width="5%">Kontaktperson 2</th>
+            <th width="2%"></th>
         </tr>
         <tr th:each="vBoern: ${vBoern}">
             <td></td>
@@ -34,6 +36,11 @@
             <td th:text="${vBoern.Adresse}"/>
             <td th:text="${vBoern.Kontaktperson}"/>
             <td th:text="${vBoern.Kontaktperson2}"/>
+            <td><a th:href="@{'/edit?id='+${vBoern.id}}">
+                <button class="btn-ed btn">edit</button>
+            </a>
+            </td>
+
         </tr>
 
     </table>

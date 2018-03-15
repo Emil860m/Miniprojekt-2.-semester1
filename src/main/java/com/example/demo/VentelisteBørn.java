@@ -71,5 +71,13 @@ public class VentelisteBørn {
     public void setId(int id) {
         this.id = id;
     }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
 }
 

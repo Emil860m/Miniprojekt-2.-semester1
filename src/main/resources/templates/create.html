@@ -9,15 +9,17 @@
 
 <form method="Post" th:action="@{/create}">
     <label>Navn:</label>
-    <input type="text" th:field="${VentelisteBørn.navn}" required="true" />
+    <input type="text" th:field="${VentelisteBørn.navn}" required="true" /></br></br>
     <label>Telefon:</label>
-    <input type="text" th:field="${VentelisteBørn.telefonnummer}" required="true" />
+    <input type="text" th:field="${VentelisteBørn.telefonnummer}" required="true" /></br></br>
     <label>Adresse:</label>
-    <input type="text" th:field="${VentelisteBørn.adresse}" required="true" />
+    <input type="text" th:field="${VentelisteBørn.adresse}" required="true" /></br></br>
     <label>Kontaktperson:</label>
-    <input type="text" th:field="${VentelisteBørn.kontaktperson}" required="true" />
+    <input type="text" th:field="${VentelisteBørn.kontaktperson}" required="true" /></br></br>
     <label>Kontaktperson 2:</label>
-    <input type="text" th:field="${VentelisteBørn.kontaktperson2}" required="true" />
+    <input type="text" th:field="${VentelisteBørn.kontaktperson2}" required="true" /></br></br>
+    <label>Meldt ind:</label>
+    <input type="text" th:field="${VentelisteBørn.status}" required="true" /></br></br>
     <input type="submit" value="Send" />
 </form>
 

@@ -1,4 +1,2 @@
-1,mich,2345,asda,jeigrj,gjirgjr,false
-2,Emil,123,adssad,asdasf,gfds,true
-3,Emil,123,agfsa,sdgfftervfdsda,dsvfbgw,false
-4,Michael Jensen,2088223,koefkgor kgorko,gkrorgk okgro o,ogkrork orkog,false
+1,hejhej,12345678,dollarjoe,gingerlord,kebabmeister,false
+2,hej,12345678,hejhej,hejhejhej,hejhejhejhej,true

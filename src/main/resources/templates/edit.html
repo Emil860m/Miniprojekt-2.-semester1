@@ -9,19 +9,19 @@
 <h1>Update information for student</h1>
 <form method="Post" th:action="@{/edit}">
     <label>ID:</label>
-    <input id="boernIdInput" type="text" th:field="${vBoern.id}" readonly="true" />
+    <input id="boernIdInput" type="text" th:field="${vBoern.id}" readonly="true" /></br></br>
     <label>Barnets navn:</label>
-    <input type="text" th:field="${vBoern.navn}" required="true" />
+    <input type="text" th:field="${vBoern.navn}" required="true" /></br></br>
     <label>Adresse:</label>
-    <input type="text" th:field="${vBoern.adresse}" required="true" />
+    <input type="text" th:field="${vBoern.adresse}" required="true" /></br></br>
     <label>Telefonnummer:</label>
-    <input type="text" th:field="${vBoern.telefonnummer}" required="true" />
+    <input type="text" th:field="${vBoern.telefonnummer}" required="true" /></br></br>
     <label>Kontaktperson 1:</label>
-    <input type="text" th:field="${vBoern.kontaktperson}" required="true" />
+    <input type="text" th:field="${vBoern.kontaktperson}" required="true" /></br></br>
     <label>Kontaktperson 2:</label>
-    <input type="text" th:field="${vBoern.kontaktperson2}" required="true" />
+    <input type="text" th:field="${vBoern.kontaktperson2}" required="true" /></br></br>
     <label>Medlemstype:</label>
-    <input type="text" th:field="${vBoern.status}" required="true" />
+    <input type="text" th:field="${vBoern.status}" required="true" /></br></br>
     <input type="submit" value="Send" />
 </form>
 </body>

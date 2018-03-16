@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+
+</head>
+<body>
+<h2>Er du sikker på du vil slette?</h2>
+<form action="#" th:action="@{/delete}" method="post">
+    <p th:text="${vBoern.navn}"></p>
+    <input type="hidden" th:field="${vBoern.id}" />
+    <input type="submit" value="JA" class="btn btn-del w" />
+    <a href="/" class="btn btn-create w">NEJ</a>
+</form>
+</body>
+</html>

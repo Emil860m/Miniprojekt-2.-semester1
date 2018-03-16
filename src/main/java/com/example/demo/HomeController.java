@@ -22,7 +22,9 @@ public class HomeController {
 
     @GetMapping("/")
     public String index(Model model) {
-        læsFraFil();
+        if(veBoern.size()<1||mBoern.size()<1) {
+            læsFraFil();
+        }
         //model.addAttribute("vBoern", vBoern);
         //model.addAttribute("boern", boern);
         //model.addAttribute("ansat", ansat);

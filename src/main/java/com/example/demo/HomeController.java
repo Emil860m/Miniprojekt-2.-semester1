@@ -82,6 +82,45 @@ public class HomeController {
         addToList();
         return "redirect:/venteliste";
     }
+    @GetMapping("/delete")
+    public String delete(@RequestParam(value = "id") int id, Model model) {
+        int selectedBarnID = 0;
+        for (int i = 0; i < vBoern.size(); i++) {
+            if (vBoern.get(i).getId() == id) {
+                selectedBarnID = i;
+            }
+        }
+        model.addAttribute("vBoern", vBoern.get(selectedBarnID));
+        return "delete";
+    }
+
+    @PostMapping("/delete")
+    public String delete(@ModelAttribute VentelisteBørn boern) {
+
+        for (int i = 0; i < vBoern.size(); i++) {
+            if (boern.getId() == vBoern.get(i).getId()) {
+                if (vBoern.get(i).isStatus()){
+                    for(int z = 0; z < mBoern.size(); z++){
+                        if(vBoern.get(i) == mBoern.get(z)){
+                            mBoern.remove(z);
+                        }
+                    }
+                }else{
+                    for (int v = 0; v < veBoern.size(); v++){
+                        if(veBoern.get(v) == vBoern.get(i)){
+                            veBoern.remove(v);
+                        }
+                    }
+                }
+                vBoern.remove(i);
+                break;
+            } else {
+                //DEBUG -- Print while not finding the correct ID System.out.println("Could not find it::");
+            }
+        }
+
+        return "redirect:/venteliste";
+    }
 
     public static void gemMedlem() throws Exception {
         String s = "";

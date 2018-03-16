@@ -19,9 +19,10 @@
             <th width="1%"></th>
             <th width="4%">Barnets navn</th>
             <th width="2%">Telefon</th>
-            <th width="5%">Addresse</th>
+            <th width="3%">Addresse</th>
             <th width="5%">Kontaktperson 1</th>
             <th width="5%">Kontaktperson 2</th>
+            <th width="2%"></th>
         </tr>
         <tr th:each="mBoern: ${mBoern}">
             <td></td>
@@ -30,6 +31,13 @@
             <td th:text="${mBoern.Adresse}"/>
             <td th:text="${mBoern.Kontaktperson}"/>
             <td th:text="${mBoern.Kontaktperson2}"/>
+            <td><a th:href="@{'/edit?id='+${mBoern.id}}">
+                <button class="btn-ed btn">edit</button>
+            </a>
+                <a th:href="@{'/delete?id='+${mBoern.id}}">
+                    <button class="btn-ed btn">delete</button>
+                </a>
+            </td>
         </tr>
 
 

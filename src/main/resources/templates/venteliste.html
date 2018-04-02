@@ -24,7 +24,7 @@
             <th width="1%"></th>
             <th width="4%">Barnets navn</th>
             <th width="2%">Telefon</th>
-            <th width="3%">Addresse</th>
+            <th width="3%">Adresse</th>
             <th width="5%">Kontaktperson 1</th>
             <th width="5%">Kontaktperson 2</th>
             <th width="2%"></th>
@@ -37,7 +37,7 @@
             <td th:text="${veBoern.Kontaktperson}"/>
             <td th:text="${veBoern.Kontaktperson2}"/>
             <td><a th:href="@{'/edit?id='+${veBoern.id}}">
-                <button class="btn-ed btn">Rediger</button>
+                <button class="btn-ed btn">rediger</button>
             </a>
                 <a th:href="@{'/delete?id='+${veBoern.id}}">
                     <button class="btn-ed btn">delete</button>
